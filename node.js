@@ -16,7 +16,6 @@ const fs = require("fs/promises");
 
     const pageContent = await page.content();
     const $ = cheerio.load(pageContent);
-
     const productData = $(".product-grid__items .product-card").map((index, el) => {
       const name = $(".product-card__title", el).text();
       const des = $(".product-card__subtitle", el).text();
